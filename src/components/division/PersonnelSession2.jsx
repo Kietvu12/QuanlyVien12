@@ -1,99 +1,74 @@
-import { FaSearch, FaPlus, FaEdit, FaTrash, FaEye } from 'react-icons/fa';
-import { useAuth } from '../../context/AuthContext';
+import { FaSearch, FaBuilding } from 'react-icons/fa';
 
-const activePersonnel = [
+const personnelData = [
   {
     id: 'NV-2025-001',
     name: 'Nguyễn Văn A',
     position: 'Trưởng phòng',
     department: 'Công nghệ thông tin',
+    institute: 'Viện Tin học Xây Dựng',
     email: 'nguyenvana@example.com',
     phone: '0901234567',
     startDate: '15/01/2020',
     salary: '25.000.000',
-    status: 'Đang làm việc',
   },
   {
     id: 'NV-2025-002',
     name: 'Trần Thị B',
-    position: 'Chuyên viên cao cấp',
+    position: 'Chuyên viên',
     department: 'Xây dựng',
+    institute: 'Viện Tin học Xây Dựng',
     email: 'tranthib@example.com',
     phone: '0901234568',
     startDate: '20/03/2021',
-    salary: '22.000.000',
-    status: 'Đang làm việc',
+    salary: '18.000.000',
   },
   {
     id: 'NV-2025-003',
     name: 'Lê Văn C',
-    position: 'Chuyên viên',
+    position: 'Giám đốc',
     department: 'Kỹ thuật',
+    institute: 'Viện Khoa học Công nghệ',
     email: 'levanc@example.com',
     phone: '0901234569',
     startDate: '10/06/2019',
-    salary: '18.000.000',
-    status: 'Đang làm việc',
+    salary: '35.000.000',
   },
   {
     id: 'NV-2025-004',
     name: 'Phạm Thị D',
-    position: 'Chuyên viên',
-    department: 'Công nghệ thông tin',
+    position: 'Chuyên viên cao cấp',
+    department: 'Hành chính',
+    institute: 'Viện Nghiên cứu Phát triển',
     email: 'phamthid@example.com',
     phone: '0901234570',
-    startDate: '05/09/2022',
-    salary: '16.000.000',
-    status: 'Đang làm việc',
+    startDate: '05/09/2020',
+    salary: '22.000.000',
   },
   {
     id: 'NV-2025-005',
     name: 'Hoàng Văn E',
     position: 'Nhân viên',
-    department: 'Hành chính',
+    department: 'Công nghệ thông tin',
+    institute: 'Viện Khoa học Công nghệ',
     email: 'hoangvane@example.com',
     phone: '0901234571',
-    startDate: '12/11/2020',
-    salary: '12.000.000',
-    status: 'Đang làm việc',
-  },
-  {
-    id: 'NV-2025-006',
-    name: 'Nguyễn Thị F',
-    position: 'Chuyên viên cao cấp',
-    department: 'Xây dựng',
-    email: 'nguyenthif@example.com',
-    phone: '0901234572',
-    startDate: '15/04/2021',
-    salary: '20.000.000',
-    status: 'Đang làm việc',
+    startDate: '12/11/2022',
+    salary: '15.000.000',
   },
 ];
 
-const formatCurrency = (value) => {
-  return new Intl.NumberFormat('vi-VN', { maximumFractionDigits: 0 }).format(value) + ' đ';
-};
-
-const PersonnelSession3 = () => {
-  const { user } = useAuth();
-  const isReadOnly = user?.role === 'accountant';
-
+const PersonnelSession2 = () => {
   return (
     <section className="px-6">
       <div className="rounded-2xl bg-white shadow-sm px-6 py-5">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="text-lg font-bold text-gray-900">Danh sách nhân sự</h3>
+            <h3 className="text-lg font-bold text-gray-900">Danh sách nhân sự tất cả các Viện</h3>
             <p className="text-sm text-gray-500 mt-1">
-              Quản lý thông tin nhân sự của Viện
+              Xem thông tin nhân sự của tất cả các Viện
             </p>
           </div>
-          {!isReadOnly && (
-            <button className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors self-start sm:self-auto">
-              <FaPlus className="w-4 h-4" />
-              Thêm nhân sự
-            </button>
-          )}
         </div>
 
         {/* Search and filters */}
@@ -108,6 +83,12 @@ const PersonnelSession3 = () => {
               />
             </div>
           </div>
+          <select className="h-9 rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Tất cả Viện</option>
+            <option value="vien1">Viện Tin học Xây Dựng</option>
+            <option value="vien2">Viện Khoa học Công nghệ</option>
+            <option value="vien3">Viện Nghiên cứu Phát triển</option>
+          </select>
           <select className="h-9 rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             <option value="">Tất cả phòng ban</option>
             <option value="it">Công nghệ thông tin</option>
@@ -143,6 +124,9 @@ const PersonnelSession3 = () => {
                   Phòng ban
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Viện
+                </th>
+                <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Liên hệ
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -151,13 +135,10 @@ const PersonnelSession3 = () => {
                 <th className="text-right py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Lương
                 </th>
-                <th className="text-center py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Thao tác
-                </th>
               </tr>
             </thead>
             <tbody>
-              {activePersonnel.map((person) => {
+              {personnelData.map((person) => {
                 const initials = person.name
                   .split(' ')
                   .map((n) => n[0])
@@ -187,6 +168,12 @@ const PersonnelSession3 = () => {
                       </span>
                     </td>
                     <td className="py-4 px-4">
+                      <div className="flex items-center gap-2">
+                        <FaBuilding className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm text-gray-700">{person.institute}</span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4">
                       <div className="text-xs text-gray-600">
                         <div>{person.email}</div>
                         <div className="text-gray-500">{person.phone}</div>
@@ -200,23 +187,6 @@ const PersonnelSession3 = () => {
                         {person.salary} đ
                       </span>
                     </td>
-                    <td className="py-4 px-4">
-                      <div className="flex items-center justify-center gap-2">
-                        <button className="p-1.5 text-blue-600 hover:bg-blue-50 rounded transition-colors" title="Xem chi tiết">
-                          <FaEye className="w-4 h-4" />
-                        </button>
-                        {!isReadOnly && (
-                          <>
-                            <button className="p-1.5 text-green-600 hover:bg-green-50 rounded transition-colors" title="Chỉnh sửa">
-                              <FaEdit className="w-4 h-4" />
-                            </button>
-                            <button className="p-1.5 text-red-600 hover:bg-red-50 rounded transition-colors" title="Xóa">
-                              <FaTrash className="w-4 h-4" />
-                            </button>
-                          </>
-                        )}
-                      </div>
-                    </td>
                   </tr>
                 );
               })}
@@ -226,7 +196,7 @@ const PersonnelSession3 = () => {
 
         {/* Mobile/Tablet Cards */}
         <div className="2xl:hidden space-y-4">
-          {activePersonnel.map((person) => {
+          {personnelData.map((person) => {
             const initials = person.name
               .split(' ')
               .map((n) => n[0])
@@ -254,7 +224,12 @@ const PersonnelSession3 = () => {
                   </div>
                 </div>
                 
-                <div className="space-y-2 mb-3">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <FaBuilding className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                    <span className="text-xs text-gray-600">Viện:</span>
+                    <span className="text-xs text-gray-900 font-medium">{person.institute}</span>
+                  </div>
                   <div className="text-xs text-gray-600">
                     <div className="mb-1">
                       <span className="text-gray-500">Email: </span>
@@ -276,22 +251,6 @@ const PersonnelSession3 = () => {
                     </div>
                   </div>
                 </div>
-
-                <div className="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
-                  <button className="p-2 text-blue-600 hover:bg-blue-50 rounded transition-colors" title="Xem chi tiết">
-                    <FaEye className="w-4 h-4" />
-                  </button>
-                  {!isReadOnly && (
-                    <>
-                      <button className="p-2 text-green-600 hover:bg-green-50 rounded transition-colors" title="Chỉnh sửa">
-                        <FaEdit className="w-4 h-4" />
-                      </button>
-                      <button className="p-2 text-red-600 hover:bg-red-50 rounded transition-colors" title="Xóa">
-                        <FaTrash className="w-4 h-4" />
-                      </button>
-                    </>
-                  )}
-                </div>
               </div>
             );
           })}
@@ -300,7 +259,7 @@ const PersonnelSession3 = () => {
         {/* Pagination */}
         <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sm text-gray-600">
-            Hiển thị 1-6 của 112 kết quả
+            Hiển thị 1-5 của 5 kết quả
           </p>
           <div className="flex items-center gap-2">
             <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
@@ -308,12 +267,6 @@ const PersonnelSession3 = () => {
             </button>
             <button className="px-3 py-1.5 rounded-lg bg-blue-500 text-white text-sm font-medium">
               1
-            </button>
-            <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
-              2
-            </button>
-            <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
-              3
             </button>
             <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
               Sau
@@ -325,5 +278,5 @@ const PersonnelSession3 = () => {
   );
 };
 
-export default PersonnelSession3;
+export default PersonnelSession2;
 

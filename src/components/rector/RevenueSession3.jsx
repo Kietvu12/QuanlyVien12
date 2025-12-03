@@ -75,14 +75,14 @@ const RevenueSession3 = () => {
   return (
     <section className="px-6">
       <div className="rounded-2xl bg-white shadow-sm px-6 py-5">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div>
             <h3 className="text-lg font-bold text-gray-900">Bảng thu</h3>
             <p className="text-sm text-gray-500 mt-1">
               Danh sách các khoản thu trong kỳ
             </p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors">
+          <button className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors self-start sm:self-auto">
             <FaDownload className="w-4 h-4" />
             Xuất Excel
           </button>
@@ -114,8 +114,8 @@ const RevenueSession3 = () => {
           </select>
         </div>
 
-        {/* Tabla */}
-        <div className="overflow-x-auto">
+        {/* Desktop Table */}
+        <div className="overflow-x-auto hidden 2xl:block">
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-200">
@@ -172,8 +172,47 @@ const RevenueSession3 = () => {
           </table>
         </div>
 
-        {/* Paginación */}
-        <div className="mt-4 flex items-center justify-between">
+        {/* Mobile/Tablet Cards */}
+        <div className="2xl:hidden space-y-4">
+          {thuData.map((item) => (
+            <div key={item.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-sm font-semibold text-gray-900">{item.description}</span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                      {item.category}
+                    </span>
+                  </div>
+                  <div className="text-xs text-gray-600 mb-2">
+                    Ngày: <span className="text-gray-900 font-medium">{item.date}</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                <div>
+                  <span className="text-xs text-gray-600">Số tiền: </span>
+                  <span className="text-sm font-semibold text-emerald-600">
+                    {formatCurrency(item.amount)}
+                  </span>
+                </div>
+                <span
+                  className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                    item.status === 'Đã nhận'
+                      ? 'bg-emerald-100 text-emerald-800'
+                      : 'bg-yellow-100 text-yellow-800'
+                  }`}
+                >
+                  {item.status}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sm text-gray-600">
             Hiển thị 1-8 của 8 kết quả
           </p>

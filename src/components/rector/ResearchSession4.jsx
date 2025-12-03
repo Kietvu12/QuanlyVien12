@@ -96,20 +96,20 @@ const ResearchSession4 = () => {
   return (
     <section className="px-6">
       <div className="rounded-2xl bg-white shadow-sm px-6 py-5">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div>
             <h3 className="text-lg font-bold text-gray-900">Đề tài đã hoàn thành</h3>
             <p className="text-sm text-gray-500 mt-1">
               Danh sách các đề tài đã hoàn thành và kết quả đánh giá
             </p>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors">
+          <button className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors self-start sm:self-auto">
             <FaDownload className="w-4 h-4" />
             Xuất Excel
           </button>
         </div>
 
-        {/* Búsqueda y filtros */}
+        {/* Search and filters */}
         <div className="mb-4 flex flex-wrap items-center gap-4">
           <div className="flex-1 min-w-[200px]">
             <div className="relative">
@@ -136,8 +136,8 @@ const ResearchSession4 = () => {
           </select>
         </div>
 
-        {/* Tabla */}
-        <div className="overflow-x-auto">
+        {/* Desktop Table */}
+        <div className="overflow-x-auto hidden 2xl:block">
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-200">
@@ -210,8 +210,51 @@ const ResearchSession4 = () => {
           </table>
         </div>
 
-        {/* Paginación */}
-        <div className="mt-4 flex items-center justify-between">
+        {/* Mobile/Tablet Cards */}
+        <div className="2xl:hidden space-y-4">
+          {completedProjects.map((project) => (
+            <div key={project.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-sm font-semibold text-blue-600">{project.id}</span>
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                      {project.field}
+                    </span>
+                    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getResultColor(project.result)}`}>
+                      {project.result}
+                    </span>
+                  </div>
+                  <h4 className="text-sm font-semibold text-gray-900 mb-2">{project.name}</h4>
+                </div>
+              </div>
+              
+              <div className="space-y-2 mb-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-600">Người phụ trách:</span>
+                  <span className="text-xs text-gray-900 font-medium">{project.leader}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-600">Ngày hoàn thành:</span>
+                  <span className="text-xs text-gray-900 font-medium">{project.completedDate}</span>
+                </div>
+                <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                  <span className="text-xs text-gray-600">Ngân sách:</span>
+                  <span className="text-sm font-semibold text-gray-900">{project.budget} đ</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
+                <button className="p-2 text-blue-600 hover:bg-blue-50 rounded transition-colors" title="Xem chi tiết">
+                  <FaEye className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Pagination */}
+        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sm text-gray-600">
             Hiển thị 1-6 của 98 kết quả
           </p>

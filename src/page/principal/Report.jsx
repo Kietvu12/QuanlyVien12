@@ -1,8 +1,11 @@
+import ReportSession1 from '../../components/principal/ReportSession1';
+import ReportSession2 from '../../components/principal/ReportSession2';
+
 const Report = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Quản lý báo cáo - Trưởng phòng</h1>
-      <p className="text-gray-600">Quản lý và duyệt báo cáo của phòng ban</p>
+    <div className="space-y-6 py-6">
+      <ReportSession1 />
+      <ReportSession2 />
     </div>
   );
 };

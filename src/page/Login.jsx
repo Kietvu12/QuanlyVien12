@@ -96,7 +96,7 @@ const Login = () => {
             />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Viện Tin học Xây Dựng
+            Hệ thống quản lý Viện
           </h1>
           <p className="text-sm text-gray-600">
             Đăng nhập vào hệ thống quản lý
@@ -196,18 +196,6 @@ const Login = () => {
               Đăng nhập
             </button>
           </form>
-
-          {/* Demo accounts info */}
-          <div className="mt-6 p-4 rounded-lg bg-blue-50 border border-blue-200">
-            <p className="text-xs font-semibold text-blue-900 mb-2">Tài khoản demo:</p>
-            <div className="text-xs text-blue-800 space-y-1">
-              <p>• rector / 123456 (Viện trưởng)</p>
-              <p>• principal / 123456 (Trưởng phòng)</p>
-              <p>• division / 123456 (Trưởng bộ phận)</p>
-              <p>• accountant / 123456 (Kế toán)</p>
-            </div>
-          </div>
-
           {/* Divider */}
           <div className="mt-6 mb-6">
             <div className="relative">

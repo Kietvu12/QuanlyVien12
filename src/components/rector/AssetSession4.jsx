@@ -95,17 +95,17 @@ const getActivityColor = (type) => {
 const AssetSession4 = () => {
   return (
     <section className="px-6">
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Hoạt động gần đây */}
-        <div className="xl:col-span-2 rounded-2xl bg-white shadow-sm px-6 py-5">
-          <div className="flex items-center justify-between mb-6">
+        <div className="lg:col-span-2 rounded-2xl bg-white shadow-sm px-6 py-5">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
             <div>
               <h3 className="text-lg font-bold text-gray-900">Hoạt động gần đây</h3>
               <p className="text-sm text-gray-500 mt-1">
                 Lịch sử thay đổi tài sản
               </p>
             </div>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors">
+            <button className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors self-start sm:self-auto">
               <FaDownload className="w-4 h-4" />
               Xuất báo cáo
             </button>

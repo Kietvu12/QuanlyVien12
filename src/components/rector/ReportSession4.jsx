@@ -93,9 +93,9 @@ const getActionColor = (action) => {
 const ReportSession4 = () => {
   return (
     <section className="px-6">
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Hoạt động gần đây */}
-        <div className="xl:col-span-2 rounded-2xl bg-white shadow-sm px-6 py-5">
+        <div className="lg:col-span-2 rounded-2xl bg-white shadow-sm px-6 py-5">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h3 className="text-lg font-bold text-gray-900">Hoạt động gần đây</h3>

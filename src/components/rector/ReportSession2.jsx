@@ -19,18 +19,18 @@ const reportTypeData = [
 ];
 
 const monthlyReportData = [
-  { month: 'Tháng 1', count: 12 },
-  { month: 'Tháng 2', count: 15 },
-  { month: 'Tháng 3', count: 18 },
-  { month: 'Tháng 4', count: 14 },
-  { month: 'Tháng 5', count: 16 },
-  { month: 'Tháng 6', count: 20 },
-  { month: 'Tháng 7', count: 22 },
-  { month: 'Tháng 8', count: 19 },
-  { month: 'Tháng 9', count: 17 },
-  { month: 'Tháng 10', count: 21 },
-  { month: 'Tháng 11', count: 24 },
-  { month: 'Tháng 12', count: 18 },
+  { month: 'T1', fullMonth: 'Tháng 1', count: 12 },
+  { month: 'T2', fullMonth: 'Tháng 2', count: 15 },
+  { month: 'T3', fullMonth: 'Tháng 3', count: 18 },
+  { month: 'T4', fullMonth: 'Tháng 4', count: 14 },
+  { month: 'T5', fullMonth: 'Tháng 5', count: 16 },
+  { month: 'T6', fullMonth: 'Tháng 6', count: 20 },
+  { month: 'T7', fullMonth: 'Tháng 7', count: 22 },
+  { month: 'T8', fullMonth: 'Tháng 8', count: 19 },
+  { month: 'T9', fullMonth: 'Tháng 9', count: 17 },
+  { month: 'T10', fullMonth: 'Tháng 10', count: 21 },
+  { month: 'T11', fullMonth: 'Tháng 11', count: 24 },
+  { month: 'T12', fullMonth: 'Tháng 12', count: 18 },
 ];
 
 const statusData = [
@@ -125,7 +125,7 @@ const ReportSession2 = () => {
             <ResponsiveContainer width="100%" height="100%">
               <LineChart 
                 data={monthlyReportData} 
-                margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+                margin={{ top: 20, right: 20, bottom: 10, left: 20 }}
               >
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
                 <XAxis
@@ -133,9 +133,10 @@ const ReportSession2 = () => {
                   tickLine={false}
                   axisLine={false}
                   tick={{ fontSize: 10, fill: '#6B7280' }}
-                  angle={-45}
-                  textAnchor="end"
-                  height={80}
+                  angle={0}
+                  textAnchor="middle"
+                  height={40}
+                  interval={0}
                 />
                 <YAxis
                   axisLine={false}
@@ -152,6 +153,12 @@ const ReportSession2 = () => {
                     backgroundColor: '#fff'
                   }}
                   formatter={(value) => [value, 'Số báo cáo']}
+                  labelFormatter={(label, payload) => {
+                    if (payload && payload.length > 0) {
+                      return payload[0].payload.fullMonth || label;
+                    }
+                    return label;
+                  }}
                 />
                 <Line
                   type="monotone"

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Sidebar from './components/Sidebar';
@@ -19,15 +20,20 @@ import RectorCreateReport from './page/rector/CreateReport';
 // Principal pages
 import PrincipalDashboard from './page/principal/Dashboard';
 import PrincipalProfile from './page/principal/Profile';
+import PrincipalInstitute from './page/principal/Institute';
 import PrincipalResearch from './page/principal/Research';
 import PrincipalPersonnel from './page/principal/Personnel';
+import PrincipalRevenue from './page/principal/Revenue';
+import PrincipalAsset from './page/principal/Asset';
 import PrincipalReport from './page/principal/Report';
 
 // Division pages
 import DivisionDashboard from './page/division/Dashboard';
 import DivisionProfile from './page/division/Profile';
+import DivisionRevenue from './page/division/Revenue';
 import DivisionResearch from './page/division/Research';
 import DivisionPersonnel from './page/division/Personnel';
+import DivisionReport from './page/division/Report';
 
 // Accountant pages
 import AccountantDashboard from './page/accountant/Dashboard';
@@ -43,6 +49,15 @@ import './App.css';
 
 const AppRoutes = () => {
   const { user, loading } = useAuth();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
   // Mostrar loading mientras se verifica el usuario
   if (loading) {
@@ -73,9 +88,9 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute requiredRole="rector">
             <div className="flex h-screen bg-[#F8F9FA]">
-              <Sidebar />
+              <Sidebar isMobileOpen={isMobileMenuOpen} onMobileClose={closeMobileMenu} />
               <main className="flex-1 overflow-auto bg-[#F8F9FA]">
-                <Header />
+                <Header onMenuClick={toggleMobileMenu} />
                 <div className="px-6 py-4">
                   <Routes>
                     <Route path="/" element={<Navigate to="/rector/dashboard" replace />} />
@@ -102,16 +117,19 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute requiredRole="principal">
             <div className="flex h-screen bg-[#F8F9FA]">
-              <Sidebar />
+              <Sidebar isMobileOpen={isMobileMenuOpen} onMobileClose={closeMobileMenu} />
               <main className="flex-1 overflow-auto bg-[#F8F9FA]">
-                <Header />
+                <Header onMenuClick={toggleMobileMenu} />
                 <div className="px-6 py-4">
                   <Routes>
                     <Route path="/" element={<Navigate to="/principal/dashboard" replace />} />
                     <Route path="/dashboard" element={<PrincipalDashboard />} />
                     <Route path="/profile" element={<PrincipalProfile />} />
-                    <Route path="/research" element={<PrincipalResearch />} />
+                    <Route path="/institute" element={<PrincipalInstitute />} />
                     <Route path="/personnel" element={<PrincipalPersonnel />} />
+                    <Route path="/revenue" element={<PrincipalRevenue />} />
+                    <Route path="/asset" element={<PrincipalAsset />} />
+                    <Route path="/research" element={<PrincipalResearch />} />
                     <Route path="/report" element={<PrincipalReport />} />
                   </Routes>
                 </div>
@@ -127,16 +145,18 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute requiredRole="division">
       <div className="flex h-screen bg-[#F8F9FA]">
-        <Sidebar />
+        <Sidebar isMobileOpen={isMobileMenuOpen} onMobileClose={closeMobileMenu} />
         <main className="flex-1 overflow-auto bg-[#F8F9FA]">
-          <Header />
+          <Header onMenuClick={toggleMobileMenu} />
           <div className="px-6 py-4">
             <Routes>
                     <Route path="/" element={<Navigate to="/division/dashboard" replace />} />
                     <Route path="/dashboard" element={<DivisionDashboard />} />
                     <Route path="/profile" element={<DivisionProfile />} />
+                    <Route path="/revenue" element={<DivisionRevenue />} />
                     <Route path="/research" element={<DivisionResearch />} />
                     <Route path="/personnel" element={<DivisionPersonnel />} />
+                    <Route path="/report" element={<DivisionReport />} />
                   </Routes>
                 </div>
               </main>
@@ -151,9 +171,9 @@ const AppRoutes = () => {
         element={
           <ProtectedRoute requiredRole="accountant">
             <div className="flex h-screen bg-[#F8F9FA]">
-              <Sidebar />
+              <Sidebar isMobileOpen={isMobileMenuOpen} onMobileClose={closeMobileMenu} />
               <main className="flex-1 overflow-auto bg-[#F8F9FA]">
-                <Header />
+                <Header onMenuClick={toggleMobileMenu} />
                 <div className="px-6 py-4">
                   <Routes>
                     <Route path="/" element={<Navigate to="/accountant/dashboard" replace />} />

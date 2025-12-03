@@ -1,8 +1,13 @@
+import PersonnelSession1 from '../../components/principal/PersonnelSession1';
+import PersonnelSession2 from '../../components/principal/PersonnelSession2';
+import PersonnelSession3 from '../../components/principal/PersonnelSession3';
+
 const Personnel = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Quản lý nhân sự - Trưởng phòng</h1>
-      <p className="text-gray-600">Quản lý nhân sự trong phòng ban</p>
+    <div className="space-y-6 py-6">
+      <PersonnelSession1 />
+      <PersonnelSession2 />
+      <PersonnelSession3 />
     </div>
   );
 };

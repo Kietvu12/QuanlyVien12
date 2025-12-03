@@ -1,9 +1,9 @@
-import { FaCar, FaUser, FaSearch, FaPlus, FaEdit, FaTrash, FaEye, FaCheckCircle, FaTimesCircle, FaTools } from 'react-icons/fa';
+import { FaCar, FaUser, FaSearch, FaBuilding, FaTools } from 'react-icons/fa';
 
 const vehicleSummaryCards = [
   {
-    label: 'Tổng số xe',
-    value: '28',
+    label: 'Tổng số xe tất cả Viện',
+    value: '45',
     change: '+3',
     changeColor: 'text-emerald-500',
     icon: FaCar,
@@ -11,7 +11,7 @@ const vehicleSummaryCards = [
   },
   {
     label: 'Xe đã đăng ký',
-    value: '26',
+    value: '42',
     change: '+2',
     changeColor: 'text-emerald-500',
     icon: FaUser,
@@ -19,7 +19,7 @@ const vehicleSummaryCards = [
   },
   {
     label: 'Xe chưa đăng ký',
-    value: '2',
+    value: '3',
     change: '+1',
     changeColor: 'text-gray-500',
     icon: FaCar,
@@ -45,8 +45,9 @@ const vehicleList = [
     color: 'Trắng',
     employeeId: 'NV-2025-001',
     employeeName: 'Nguyễn Văn A',
-    employeePosition: 'Trưởng phòng',
+    employeePosition: 'Giám đốc',
     department: 'Công nghệ thông tin',
+    institute: 'Viện Tin học Xây Dựng',
     registeredDate: '15/01/2020',
     status: 'Đang sử dụng',
     statusColor: 'bg-emerald-100 text-emerald-800',
@@ -62,8 +63,9 @@ const vehicleList = [
     color: 'Đen',
     employeeId: 'NV-2025-002',
     employeeName: 'Trần Thị B',
-    employeePosition: 'Chuyên viên cao cấp',
-    department: 'Xây dựng',
+    employeePosition: 'Giám đốc',
+    department: 'Kỹ thuật',
+    institute: 'Viện Khoa học Công nghệ',
     registeredDate: '20/03/2021',
     status: 'Đang sử dụng',
     statusColor: 'bg-emerald-100 text-emerald-800',
@@ -79,105 +81,21 @@ const vehicleList = [
     color: 'Xám',
     employeeId: 'NV-2025-003',
     employeeName: 'Lê Văn C',
-    employeePosition: 'Chuyên viên',
-    department: 'Kỹ thuật',
+    employeePosition: 'Giám đốc',
+    department: 'Nghiên cứu',
+    institute: 'Viện Nghiên cứu Phát triển',
     registeredDate: '10/06/2019',
     status: 'Đang sử dụng',
     statusColor: 'bg-emerald-100 text-emerald-800',
     mileage: '52.300 km',
     insuranceExpiry: '10/12/2025',
   },
-  {
-    id: 'XE-2025-004',
-    licensePlate: '30A-45678',
-    brand: 'Hyundai',
-    model: 'Tucson',
-    year: 2022,
-    color: 'Bạc',
-    employeeId: 'NV-2025-004',
-    employeeName: 'Phạm Thị D',
-    employeePosition: 'Chuyên viên',
-    department: 'Công nghệ thông tin',
-    registeredDate: '05/09/2022',
-    status: 'Đang sử dụng',
-    statusColor: 'bg-emerald-100 text-emerald-800',
-    mileage: '28.900 km',
-    insuranceExpiry: '05/03/2026',
-  },
-  {
-    id: 'XE-2025-005',
-    licensePlate: '30A-56789',
-    brand: 'Ford',
-    model: 'Everest',
-    year: 2020,
-    color: 'Đỏ',
-    employeeId: 'NV-2025-005',
-    employeeName: 'Hoàng Văn E',
-    employeePosition: 'Nhân viên',
-    department: 'Hành chính',
-    registeredDate: '12/11/2020',
-    status: 'Đang bảo trì',
-    statusColor: 'bg-orange-100 text-orange-800',
-    mileage: '48.100 km',
-    insuranceExpiry: '12/05/2026',
-  },
-  {
-    id: 'XE-2025-006',
-    licensePlate: '30A-67890',
-    brand: 'Toyota',
-    model: 'Vios',
-    year: 2021,
-    color: 'Trắng',
-    employeeId: null,
-    employeeName: null,
-    employeePosition: null,
-    department: null,
-    registeredDate: null,
-    status: 'Chưa đăng ký',
-    statusColor: 'bg-gray-100 text-gray-800',
-    mileage: '15.200 km',
-    insuranceExpiry: '15/08/2026',
-  },
-  {
-    id: 'XE-2025-007',
-    licensePlate: '30A-78901',
-    brand: 'Honda',
-    model: 'Civic',
-    year: 2023,
-    color: 'Xanh',
-    employeeId: 'NV-2025-006',
-    employeeName: 'Nguyễn Thị F',
-    employeePosition: 'Chuyên viên cao cấp',
-    department: 'Xây dựng',
-    registeredDate: '15/04/2021',
-    status: 'Đang sử dụng',
-    statusColor: 'bg-emerald-100 text-emerald-800',
-    mileage: '22.400 km',
-    insuranceExpiry: '15/10/2026',
-  },
-  {
-    id: 'XE-2025-008',
-    licensePlate: '30A-89012',
-    brand: 'Mitsubishi',
-    model: 'Outlander',
-    year: 2020,
-    color: 'Đen',
-    employeeId: null,
-    employeeName: null,
-    employeePosition: null,
-    department: null,
-    registeredDate: null,
-    status: 'Chưa đăng ký',
-    statusColor: 'bg-gray-100 text-gray-800',
-    mileage: '18.500 km',
-    insuranceExpiry: '20/07/2026',
-  },
 ];
 
-const PersonnelSession5 = () => {
+const PersonnelSession3 = () => {
   return (
     <section className="px-6">
-      {/* Summary Cards */}
+      {/* Summary cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
         {vehicleSummaryCards.map((card) => {
           const Icon = card.icon;
@@ -206,22 +124,18 @@ const PersonnelSession5 = () => {
         })}
       </div>
 
-      {/* Tabla de gestión de xe */}
+      {/* Vehicle table */}
       <div className="rounded-2xl bg-white shadow-sm px-6 py-5">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="text-lg font-bold text-gray-900">Quản lý xe của nhân viên</h3>
+            <h3 className="text-lg font-bold text-gray-900">Danh sách xe của nhân viên</h3>
             <p className="text-sm text-gray-500 mt-1">
-              Danh sách xe thuộc sở hữu của nhân viên
+              Xem danh sách xe thuộc sở hữu của nhân viên tất cả các Viện
             </p>
           </div>
-          <button className="flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-600 transition-colors self-start sm:self-auto">
-            <FaPlus className="w-4 h-4" />
-            Đăng ký xe mới
-          </button>
         </div>
 
-        {/* Filtros y búsqueda */}
+        {/* Search and filters */}
         <div className="mb-4 flex flex-wrap items-center gap-4">
           <div className="flex-1 min-w-[200px]">
             <div className="relative">
@@ -234,17 +148,16 @@ const PersonnelSession5 = () => {
             </div>
           </div>
           <select className="h-9 rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="">Tất cả Viện</option>
+            <option value="vien1">Viện Tin học Xây Dựng</option>
+            <option value="vien2">Viện Khoa học Công nghệ</option>
+            <option value="vien3">Viện Nghiên cứu Phát triển</option>
+          </select>
+          <select className="h-9 rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             <option value="">Tất cả trạng thái</option>
             <option value="using">Đang sử dụng</option>
             <option value="maintenance">Đang bảo trì</option>
             <option value="unregistered">Chưa đăng ký</option>
-          </select>
-          <select className="h-9 rounded-lg border border-gray-300 bg-white px-3 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-            <option value="">Tất cả phòng ban</option>
-            <option value="it">Công nghệ thông tin</option>
-            <option value="construction">Xây dựng</option>
-            <option value="engineering">Kỹ thuật</option>
-            <option value="admin">Hành chính</option>
           </select>
         </div>
 
@@ -263,19 +176,16 @@ const PersonnelSession5 = () => {
                   Chủ sở hữu
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                  Viện
+                </th>
+                <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Ngày đăng ký
                 </th>
                 <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Số km
                 </th>
-                <th className="text-left py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Hết hạn BH
-                </th>
                 <th className="text-center py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
                   Trạng thái
-                </th>
-                <th className="text-center py-3 px-4 text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                  Thao tác
                 </th>
               </tr>
             </thead>
@@ -296,87 +206,46 @@ const PersonnelSession5 = () => {
                       <span className="text-sm font-medium text-blue-600">{vehicle.id}</span>
                     </td>
                     <td className="py-4 px-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold text-xs">
-                          <FaCar className="w-5 h-5" />
+                      <div>
+                        <div className="text-sm font-medium text-gray-900">
+                          {vehicle.brand} {vehicle.model} ({vehicle.year})
                         </div>
-                        <div>
-                          <div className="text-sm font-semibold text-gray-900">
-                            {vehicle.licensePlate}
-                          </div>
-                          <div className="text-xs text-gray-600">
-                            {vehicle.brand} {vehicle.model} ({vehicle.year})
-                          </div>
-                          <div className="text-xs text-gray-500">
-                            Màu: {vehicle.color}
-                          </div>
+                        <div className="text-xs text-gray-500 mt-1">
+                          Biển số: {vehicle.licensePlate} | Màu: {vehicle.color}
                         </div>
                       </div>
                     </td>
                     <td className="py-4 px-4">
                       {vehicle.employeeName ? (
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold text-xs">
+                          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold text-xs">
                             {employeeInitials}
                           </div>
                           <div>
-                            <div className="text-sm font-medium text-gray-900">
-                              {vehicle.employeeName}
-                            </div>
-                            <div className="text-xs text-gray-600">
-                              {vehicle.employeePosition}
-                            </div>
-                            <div className="text-xs text-gray-500">
-                              {vehicle.department}
-                            </div>
-                            <div className="text-xs text-blue-600 mt-1">
-                              {vehicle.employeeId}
-                            </div>
+                            <div className="text-sm font-medium text-gray-900">{vehicle.employeeName}</div>
+                            <div className="text-xs text-gray-500">{vehicle.employeePosition}</div>
                           </div>
                         </div>
                       ) : (
-                        <span className="text-sm text-gray-400 italic">Chưa đăng ký</span>
+                        <span className="text-sm text-gray-400">Chưa có</span>
                       )}
                     </td>
                     <td className="py-4 px-4">
-                      {vehicle.registeredDate ? (
-                        <span className="text-sm text-gray-700">{vehicle.registeredDate}</span>
-                      ) : (
-                        <span className="text-sm text-gray-400">-</span>
-                      )}
+                      <div className="flex items-center gap-2">
+                        <FaBuilding className="w-4 h-4 text-blue-500" />
+                        <span className="text-sm text-gray-700">{vehicle.institute}</span>
+                      </div>
+                    </td>
+                    <td className="py-4 px-4">
+                      <span className="text-sm text-gray-700">{vehicle.registeredDate || '-'}</span>
                     </td>
                     <td className="py-4 px-4">
                       <span className="text-sm text-gray-700">{vehicle.mileage}</span>
-                    </td>
-                    <td className="py-4 px-4">
-                      <span className="text-sm text-gray-700">{vehicle.insuranceExpiry}</span>
                     </td>
                     <td className="py-4 px-4 text-center">
                       <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${vehicle.statusColor}`}>
                         {vehicle.status}
                       </span>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="flex items-center justify-center gap-2">
-                        <button className="p-1.5 text-blue-600 hover:bg-blue-50 rounded transition-colors" title="Xem chi tiết">
-                          <FaEye className="w-4 h-4" />
-                        </button>
-                        {vehicle.employeeName ? (
-                          <button className="p-1.5 text-orange-600 hover:bg-orange-50 rounded transition-colors" title="Xóa đăng ký">
-                            <FaTimesCircle className="w-4 h-4" />
-                          </button>
-                        ) : (
-                          <button className="p-1.5 text-green-600 hover:bg-green-50 rounded transition-colors" title="Đăng ký xe">
-                            <FaCheckCircle className="w-4 h-4" />
-                          </button>
-                        )}
-                        <button className="p-1.5 text-green-600 hover:bg-green-50 rounded transition-colors" title="Chỉnh sửa">
-                          <FaEdit className="w-4 h-4" />
-                        </button>
-                        <button className="p-1.5 text-red-600 hover:bg-red-50 rounded transition-colors" title="Xóa">
-                          <FaTrash className="w-4 h-4" />
-                        </button>
-                      </div>
                     </td>
                   </tr>
                 );
@@ -410,33 +279,37 @@ const PersonnelSession5 = () => {
                         {vehicle.status}
                       </span>
                     </div>
-                    <h4 className="text-sm font-semibold text-gray-900 mb-1">{vehicle.licensePlate}</h4>
-                    <p className="text-xs text-gray-600 mb-1">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-1">
                       {vehicle.brand} {vehicle.model} ({vehicle.year})
+                    </h4>
+                    <p className="text-xs text-gray-500">
+                      Biển số: {vehicle.licensePlate} | Màu: {vehicle.color}
                     </p>
-                    <p className="text-xs text-gray-500">Màu: {vehicle.color}</p>
                   </div>
                 </div>
 
                 {vehicle.employeeName ? (
                   <div className="flex items-start gap-3 mb-3 p-3 bg-gray-50 rounded-lg">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white font-semibold text-xs flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white font-semibold text-xs flex-shrink-0">
                       {employeeInitials}
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-gray-900 mb-1">{vehicle.employeeName}</p>
-                      <p className="text-xs text-gray-600 mb-1">{vehicle.employeePosition}</p>
-                      <p className="text-xs text-gray-500 mb-1">{vehicle.department}</p>
-                      <p className="text-xs text-blue-600">{vehicle.employeeId}</p>
+                      <p className="text-xs text-gray-500 mb-1">{vehicle.employeePosition}</p>
                     </div>
                   </div>
                 ) : (
                   <div className="mb-3 p-3 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-400 italic">Chưa đăng ký</p>
+                    <p className="text-sm text-gray-400">Chưa có chủ sở hữu</p>
                   </div>
                 )}
 
                 <div className="space-y-2 mb-3">
+                  <div className="flex items-center gap-2">
+                    <FaBuilding className="w-4 h-4 text-blue-500 flex-shrink-0" />
+                    <span className="text-xs text-gray-600">Viện: </span>
+                    <span className="text-xs text-gray-900 font-medium">{vehicle.institute}</span>
+                  </div>
                   {vehicle.registeredDate && (
                     <div className="flex items-center justify-between">
                       <span className="text-xs text-gray-600">Ngày đăng ký:</span>
@@ -447,31 +320,6 @@ const PersonnelSession5 = () => {
                     <span className="text-xs text-gray-600">Số km:</span>
                     <span className="text-xs text-gray-900 font-medium">{vehicle.mileage}</span>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-600">Hết hạn BH:</span>
-                    <span className="text-xs text-gray-900 font-medium">{vehicle.insuranceExpiry}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-end gap-2 pt-3 border-t border-gray-100">
-                  <button className="p-2 text-blue-600 hover:bg-blue-50 rounded transition-colors" title="Xem chi tiết">
-                    <FaEye className="w-4 h-4" />
-                  </button>
-                  {vehicle.employeeName ? (
-                    <button className="p-2 text-orange-600 hover:bg-orange-50 rounded transition-colors" title="Xóa đăng ký">
-                      <FaTimesCircle className="w-4 h-4" />
-                    </button>
-                  ) : (
-                    <button className="p-2 text-green-600 hover:bg-green-50 rounded transition-colors" title="Đăng ký xe">
-                      <FaCheckCircle className="w-4 h-4" />
-                    </button>
-                  )}
-                  <button className="p-2 text-green-600 hover:bg-green-50 rounded transition-colors" title="Chỉnh sửa">
-                    <FaEdit className="w-4 h-4" />
-                  </button>
-                  <button className="p-2 text-red-600 hover:bg-red-50 rounded transition-colors" title="Xóa">
-                    <FaTrash className="w-4 h-4" />
-                  </button>
                 </div>
               </div>
             );
@@ -481,7 +329,7 @@ const PersonnelSession5 = () => {
         {/* Pagination */}
         <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-sm text-gray-600">
-            Hiển thị 1-8 của 28 kết quả
+            Hiển thị 1-3 của 3 kết quả
           </p>
           <div className="flex items-center gap-2">
             <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
@@ -489,12 +337,6 @@ const PersonnelSession5 = () => {
             </button>
             <button className="px-3 py-1.5 rounded-lg bg-blue-500 text-white text-sm font-medium">
               1
-            </button>
-            <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
-              2
-            </button>
-            <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
-              3
             </button>
             <button className="px-3 py-1.5 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
               Sau
@@ -506,5 +348,5 @@ const PersonnelSession5 = () => {
   );
 };
 
-export default PersonnelSession5;
+export default PersonnelSession3;
 

@@ -13,18 +13,18 @@ import {
 } from 'recharts';
 
 const monthlyData = [
-  { month: 'Tháng 1', thu: 200000000, chi: 150000000 },
-  { month: 'Tháng 2', thu: 180000000, chi: 140000000 },
-  { month: 'Tháng 3', thu: 220000000, chi: 160000000 },
-  { month: 'Tháng 4', thu: 250000000, chi: 180000000 },
-  { month: 'Tháng 5', thu: 280000000, chi: 200000000 },
-  { month: 'Tháng 6', thu: 300000000, chi: 210000000 },
-  { month: 'Tháng 7', thu: 320000000, chi: 220000000 },
-  { month: 'Tháng 8', thu: 290000000, chi: 200000000 },
-  { month: 'Tháng 9', thu: 310000000, chi: 215000000 },
-  { month: 'Tháng 10', thu: 330000000, chi: 230000000 },
-  { month: 'Tháng 11', thu: 350000000, chi: 240000000 },
-  { month: 'Tháng 12', thu: 380000000, chi: 250000000 },
+  { month: 'T1', fullMonth: 'Tháng 1', thu: 200000000, chi: 150000000 },
+  { month: 'T2', fullMonth: 'Tháng 2', thu: 180000000, chi: 140000000 },
+  { month: 'T3', fullMonth: 'Tháng 3', thu: 220000000, chi: 160000000 },
+  { month: 'T4', fullMonth: 'Tháng 4', thu: 250000000, chi: 180000000 },
+  { month: 'T5', fullMonth: 'Tháng 5', thu: 280000000, chi: 200000000 },
+  { month: 'T6', fullMonth: 'Tháng 6', thu: 300000000, chi: 210000000 },
+  { month: 'T7', fullMonth: 'Tháng 7', thu: 320000000, chi: 220000000 },
+  { month: 'T8', fullMonth: 'Tháng 8', thu: 290000000, chi: 200000000 },
+  { month: 'T9', fullMonth: 'Tháng 9', thu: 310000000, chi: 215000000 },
+  { month: 'T10', fullMonth: 'Tháng 10', thu: 330000000, chi: 230000000 },
+  { month: 'T11', fullMonth: 'Tháng 11', thu: 350000000, chi: 240000000 },
+  { month: 'T12', fullMonth: 'Tháng 12', thu: 380000000, chi: 250000000 },
 ];
 
 const dailyData = [
@@ -72,9 +72,10 @@ const RevenueSession2 = () => {
                   dataKey="month"
                   tickLine={false}
                   tick={{ fontSize: 10, fill: '#9CA3AF' }}
-                  angle={-45}
-                  textAnchor="end"
-                  height={80}
+                  angle={0}
+                  textAnchor="middle"
+                  height={40}
+                  interval={0}
                 />
                 <YAxis
                   axisLine={false}
@@ -86,6 +87,12 @@ const RevenueSession2 = () => {
                   cursor={{ fill: 'rgba(59,130,246,0.1)' }}
                   contentStyle={{ fontSize: 12, borderRadius: 8 }}
                   formatter={(value) => formatCurrency(value)}
+                  labelFormatter={(label, payload) => {
+                    if (payload && payload.length > 0) {
+                      return payload[0].payload.fullMonth || label;
+                    }
+                    return label;
+                  }}
                 />
                 <Bar
                   dataKey="thu"

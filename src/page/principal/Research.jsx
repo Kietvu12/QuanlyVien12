@@ -1,8 +1,13 @@
+import ResearchSession1 from '../../components/principal/ResearchSession1';
+import ResearchSession2 from '../../components/principal/ResearchSession2';
+import ResearchSession3 from '../../components/principal/ResearchSession3';
+
 const Research = () => {
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Đề tài nghiên cứu - Trưởng phòng</h1>
-      <p className="text-gray-600">Quản lý đề tài nghiên cứu của phòng ban</p>
+    <div className="space-y-6 py-6">
+      <ResearchSession1 />
+      <ResearchSession2 />
+      <ResearchSession3 />
     </div>
   );
 };

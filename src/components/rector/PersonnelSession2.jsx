@@ -166,25 +166,26 @@ const PersonnelSession2 = () => {
 
           <div className="flex-1 flex items-center justify-center min-h-[280px]">
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart 
-                data={positionData} 
-                margin={{ top: 20, right: 20, bottom: 40, left: 20 }}
+              <BarChart
+                data={positionData}
+                layout="vertical"
+                margin={{ top: 10, right: 20, bottom: 10, left: 5 }}
               >
-                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
-                <XAxis
-                  dataKey="position"
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 10, fill: '#6B7280' }}
-                  angle={-45}
-                  textAnchor="end"
-                  height={80}
-                />
-                <YAxis
+                <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#e5e7eb" />
+                <XAxis 
+                  type="number" 
                   axisLine={false}
                   tickLine={false}
                   tick={{ fontSize: 11, fill: '#9CA3AF' }}
-                  width={40}
+                />
+                <YAxis
+                  dataKey="position"
+                  type="category"
+                  axisLine={false}
+                  tickLine={false}
+                  tick={{ fontSize: 11, fill: '#6B7280' }}
+                  width={100}
+                  interval={0}
                 />
                 <Tooltip
                   cursor={{ fill: 'rgba(139,92,246,0.1)' }}
@@ -199,7 +200,7 @@ const PersonnelSession2 = () => {
                 <Bar
                   dataKey="count"
                   fill="#8b5cf6"
-                  radius={[6, 6, 0, 0]}
+                  radius={[0, 6, 6, 0]}
                   name="Số nhân sự"
                 />
               </BarChart>
