@@ -1,5 +1,5 @@
 import { FaDownload, FaFileAlt, FaCalendarAlt, FaChartLine } from 'react-icons/fa';
-
+import React from 'react';
 const recentActivities = [
   {
     id: 1,

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaSearch, FaBuilding, FaFileAlt, FaDownload, FaEye, FaExchangeAlt } from 'react-icons/fa';
-
+import React from 'react';
 const handoverToInstitute = [
   {
     id: 'BG-2025-001',

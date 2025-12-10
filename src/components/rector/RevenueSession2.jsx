@@ -11,7 +11,7 @@ import {
   LineChart,
   Line,
 } from 'recharts';
-
+import React from 'react';
 const monthlyData = [
   { month: 'T1', fullMonth: 'Tháng 1', thu: 200000000, chi: 150000000 },
   { month: 'T2', fullMonth: 'Tháng 2', thu: 180000000, chi: 140000000 },

@@ -1,5 +1,5 @@
 import { FaSearch, FaBuilding, FaEye, FaFileAlt } from 'react-icons/fa';
-
+import React from 'react';
 const assets = [
   {
     id: 'TS-2025-001',

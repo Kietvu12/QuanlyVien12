@@ -1,5 +1,5 @@
 import { FaUsers, FaFlask, FaDollarSign, FaWallet, FaFileAlt } from 'react-icons/fa';
-
+import React from 'react'
 const cards = [
   {
     label: 'Tổng nhân sự tất cả Viện',

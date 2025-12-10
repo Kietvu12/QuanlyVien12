@@ -1,5 +1,5 @@
 import { FaBuilding, FaUsers, FaFlask, FaDollarSign, FaWallet, FaBox, FaFileAlt } from 'react-icons/fa';
-
+import React from 'react';
 const cards = [
   {
     label: 'Tổng số Viện',

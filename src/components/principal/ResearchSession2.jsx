@@ -11,7 +11,7 @@ import {
   Cell,
   Legend,
 } from 'recharts';
-
+import React from 'react';
 const instituteProjectData = [
   { institute: 'Viện Tin học Xây Dựng', projects: 25, revenue: 3200000000 },
   { institute: 'Viện Khoa học Công nghệ', projects: 22, revenue: 2800000000 },

@@ -10,7 +10,7 @@ import {
   Pie,
   Cell,
 } from 'recharts';
-
+import React from 'react';
 const departmentData = [
   { department: 'CNTT', fullDepartment: 'Công nghệ thông tin', count: 45 },
   { department: 'Xây dựng', fullDepartment: 'Xây dựng', count: 32 },

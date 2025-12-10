@@ -1,5 +1,5 @@
 import { FaWallet, FaGlobe, FaUsers, FaExclamationTriangle } from 'react-icons/fa';
-
+import React from 'react';
 const cards = [
   {
     label: 'Doanh thu',

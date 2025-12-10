@@ -1,5 +1,5 @@
 import { FaSearch, FaBuilding, FaUsers, FaFlask, FaEye, FaDollarSign } from 'react-icons/fa';
-
+import React from 'react';
 const projects = [
   {
     id: 'DT-2025-001',

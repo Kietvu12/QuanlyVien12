@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaSearch, FaPlus, FaEdit, FaTrash, FaEye, FaLock, FaUnlock, FaUserShield, FaUser, FaUserTie, FaUserCog } from 'react-icons/fa';
-
+import React from 'react';
 const accounts = [
   {
     id: 'ACC-001',

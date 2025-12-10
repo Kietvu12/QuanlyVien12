@@ -11,7 +11,7 @@ import {
   Cell,
   Legend,
 } from 'recharts';
-
+import React from 'react'
 const statusData = [
   { name: 'Đã thanh toán', value: 198, color: '#10b981' },
   { name: 'Chờ thanh toán', value: 35, color: '#f59e0b' },

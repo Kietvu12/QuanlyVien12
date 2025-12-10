@@ -3,12 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaFileExcel, FaFileWord, FaDownload, FaCheck } from 'react-icons/fa';
 import ExcelViewer from '../../components/ExcelViewer';
 import ActivityReportForm from '../../components/rector/ActivityReportForm';
-
+import React from 'react';
 // Import Excel files as URLs
 import bctcFileUrl from '../../assets/Report/BCTC TH 2024 ( 03 biểu) - Copy.xlsx?url';
 import plFileUrl from '../../assets/Report/PL1 - PL2 Bao cao co so KH&CN nam 2024.xlsx?url';
 import docFileUrl from '../../assets/Report/Mẫu báo cáo hoạt động năm 2024  .doc?url';
-
 const reportTemplates = [
   {
     id: 'bctc',

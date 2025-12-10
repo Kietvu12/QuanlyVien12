@@ -1,5 +1,5 @@
 import { FaSearch, FaDownload } from 'react-icons/fa';
-
+import React from 'react';
 const thuData = [
   {
     id: 1,

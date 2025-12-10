@@ -1,5 +1,5 @@
 import { FaSearch, FaBuilding, FaEye, FaDownload, FaFileAlt } from 'react-icons/fa';
-
+import React from 'react';
 const reports = [
   {
     id: 'BC-2025-001',

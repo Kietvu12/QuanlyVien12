@@ -1,5 +1,5 @@
 import { FaDollarSign, FaArrowUp, FaArrowDown, FaWallet, FaBuilding } from 'react-icons/fa';
-
+import React from 'react'
 const summaryCards = [
   {
     label: 'Tổng thu tất cả Viện',

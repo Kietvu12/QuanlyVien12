@@ -10,7 +10,7 @@ import {
   Area,
 } from 'recharts';
 import { FaFileAlt, FaRocket, FaWallet } from 'react-icons/fa';
-
+import React from 'react';
 const monthlyRevenueData = [
   { month: '01', value: 250 },
   { month: '02', value: 150 },

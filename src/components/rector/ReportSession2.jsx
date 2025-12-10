@@ -9,7 +9,7 @@ import {
   LineChart,
   Line,
 } from 'recharts';
-
+import React from 'react';
 const reportTypeData = [
   { type: 'Doanh thu', fullType: 'Báo cáo doanh thu', count: 45 },
   { type: 'Đề tài', fullType: 'Báo cáo đề tài', count: 38 },

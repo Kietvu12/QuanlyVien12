@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaSearch, FaEye, FaCheckCircle, FaTimesCircle, FaBuilding, FaFileAlt } from 'react-icons/fa';
-
+import React from 'react'
 const reports = [
   {
     id: 'BC-2025-001',

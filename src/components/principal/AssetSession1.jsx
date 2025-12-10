@@ -1,5 +1,5 @@
 import { FaBox, FaBuilding, FaCheckCircle, FaExclamationTriangle, FaTimesCircle } from 'react-icons/fa';
-
+import React from 'react';
 const summaryCards = [
   {
     label: 'Tổng tài sản tất cả Viện',

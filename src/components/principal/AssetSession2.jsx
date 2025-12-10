@@ -11,7 +11,7 @@ import {
   YAxis,
   CartesianGrid,
 } from 'recharts';
-
+import React from 'react';
 const statusData = [
   { name: 'Đang sử dụng', value: 1089, color: '#10b981' },
   { name: 'Cần bảo trì', value: 98, color: '#f59e0b' },

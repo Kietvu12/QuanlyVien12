@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaSearch, FaPlus, FaEdit, FaTrash, FaEye, FaDownload, FaFileImage, FaTimes, FaUpload, FaTrashAlt } from 'react-icons/fa';
-
+import React from 'react'
 const invoices = [
   {
     id: 'HD-2025-001',

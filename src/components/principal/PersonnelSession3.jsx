@@ -1,5 +1,5 @@
 import { FaCar, FaUser, FaSearch, FaBuilding, FaTools } from 'react-icons/fa';
-
+import React from 'react';
 const vehicleSummaryCards = [
   {
     label: 'Tổng số xe tất cả Viện',

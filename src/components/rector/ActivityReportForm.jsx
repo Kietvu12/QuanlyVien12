@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { FaSave } from 'react-icons/fa';
-
+import React from 'react';
 const ActivityReportForm = ({ reportInfo, onSubmit, onBack }) => {
   const [formData, setFormData] = useState({
     // I. KHÁI QUÁT VỀ HOẠT ĐỘNG CỦA VIỆN

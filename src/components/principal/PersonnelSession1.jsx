@@ -1,5 +1,5 @@
 import { FaUsers, FaBuilding, FaUserTie, FaCheckCircle, FaCar } from 'react-icons/fa';
-
+import React from 'react';
 const summaryCards = [
   {
     label: 'Tổng nhân sự tất cả Viện',

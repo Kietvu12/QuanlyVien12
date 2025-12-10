@@ -1,5 +1,5 @@
 import { FaSearch, FaDownload, FaBuilding } from 'react-icons/fa';
-
+import React from 'react'
 const revenueData = [
   {
     id: 1,

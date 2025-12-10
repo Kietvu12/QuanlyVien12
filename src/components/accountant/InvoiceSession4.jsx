@@ -1,5 +1,5 @@
 import { FaFileInvoiceDollar, FaCheckCircle, FaClock, FaTimesCircle } from 'react-icons/fa';
-
+import React from 'react'
 const recentActivities = [
   {
     id: 1,

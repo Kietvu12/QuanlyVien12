@@ -1,5 +1,5 @@
 import { FaCheck, FaEllipsisV } from 'react-icons/fa';
-
+import React from 'react';
 const projects = [
   {
     id: 1,

@@ -7,7 +7,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from 'recharts';
-
+import React from 'react';
 const instituteData = [
   { institute: 'Viện Tin học Xây Dựng', thu: 4500000000, chi: 3200000000, congno: 850000000 },
   { institute: 'Viện Khoa học Công nghệ', thu: 3800000000, chi: 2800000000, congno: 650000000 },

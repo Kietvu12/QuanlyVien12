@@ -1,5 +1,5 @@
 import { FaSearch, FaBuilding } from 'react-icons/fa';
-
+import React from 'react';
 const instituteSummary = [
   {
     institute: 'Viện Tin học Xây Dựng',

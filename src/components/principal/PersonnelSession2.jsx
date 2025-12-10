@@ -1,5 +1,5 @@
 import { FaSearch, FaBuilding } from 'react-icons/fa';
-
+import React from 'react';
 const personnelData = [
   {
     id: 'NV-2025-001',

@@ -1,5 +1,5 @@
 import { FaBuilding, FaUsers, FaFlask, FaDollarSign, FaWallet, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
-
+import React from 'react';
 const institutes = [
   {
     id: 'VIEN-001',

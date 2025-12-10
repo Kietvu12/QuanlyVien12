@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as XLSX from 'xlsx';
 import { FaFileExcel, FaSpinner, FaExclamationTriangle } from 'react-icons/fa';
-
+import React from 'react';
 const ExcelViewer = ({ filePath, fileName, defaultSheet = null }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);

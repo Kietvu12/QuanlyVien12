@@ -1,7 +1,7 @@
 import DashboardSession1 from '../../components/principal/DashboardSession1';
 import DashboardSession2 from '../../components/principal/DashboardSession2';
 import DashboardSession3 from '../../components/principal/DashboardSession3';
-
+import React from 'react';
 const Dashboard = () => {
   return (
     <div className="space-y-6 py-6">

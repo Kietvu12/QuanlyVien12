@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -243,6 +244,21 @@ const Sidebar = ({ isMobileOpen, onMobileClose }) => {
     return commonPages;
   };
 
+  const getTitle = () => {
+    switch (user.role) {
+      case 'division':
+        return 'Phòng NCKH ĐHXDHN';
+      case 'principal':
+        return 'Đại học Xây Dựng Hà Nội';
+      case 'accountant':
+        return 'Viện Tin học Xây Dựng';
+      case 'rector':
+        return 'Viện Tin học Xây Dựng';
+      default:
+        return 'Viện Tin học Xây Dựng';
+    }
+  };
+
   const handleLogout = () => {
     logout();
     navigate('/login');
@@ -284,7 +300,7 @@ const Sidebar = ({ isMobileOpen, onMobileClose }) => {
                 className="w-12 h-12 object-contain"
               />
               <h1 className="text-base font-semibold text-black whitespace-nowrap">
-                Viện Tin học Xây Dựng
+                {getTitle()}
               </h1>
             </>
           )}

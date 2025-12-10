@@ -1,5 +1,5 @@
 import { FaFlask, FaUsers, FaDollarSign, FaChartLine, FaBuilding } from 'react-icons/fa';
-
+import React from 'react';
 const summaryCards = [
   {
     label: 'Tổng đề tài tất cả Viện',

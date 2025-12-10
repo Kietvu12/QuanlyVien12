@@ -1,5 +1,5 @@
 import { FaDownload, FaExclamationTriangle, FaCheckCircle, FaCalendarAlt, FaDollarSign } from 'react-icons/fa';
-
+import React from 'react';
 const recentActivities = [
   {
     id: 1,

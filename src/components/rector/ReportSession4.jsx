@@ -1,5 +1,5 @@
 import { FaFileAlt, FaDownload, FaChartLine, FaClock, FaExclamationTriangle } from 'react-icons/fa';
-
+import React from 'react';
 const recentReports = [
   {
     id: 1,

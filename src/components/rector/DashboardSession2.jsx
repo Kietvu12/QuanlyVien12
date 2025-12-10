@@ -10,7 +10,7 @@ import {
   Tooltip,
   CartesianGrid,
 } from 'recharts';
-
+import React from 'react';
 const donutData = [
   { name: 'Đã nộp về trường', value: 120000000, color: '#4F46E5' }, // đã nộp
   { name: 'Công nợ còn lại', value: 240000000, color: '#A5B4FC' }, // còn nợ

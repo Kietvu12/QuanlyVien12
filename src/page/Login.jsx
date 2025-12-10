@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import logo from '../assets/icon/logo.png';
-
+import React from 'react';
 // Datos de usuarios de ejemplo (en producción vendría de una API)
 const users = [
   {

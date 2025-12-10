@@ -1,7 +1,7 @@
 import { FaEdit, FaEnvelope, FaPhone, FaMapMarkerAlt, FaBriefcase, FaBuilding, FaCalendarAlt, FaLock, FaUser, FaSave, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
-
+import React from 'react';
 const Profile = () => {
   const { user } = useAuth();
   const [isEditing, setIsEditing] = useState(false);

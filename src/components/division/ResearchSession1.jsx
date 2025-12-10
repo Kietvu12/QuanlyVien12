@@ -1,5 +1,5 @@
 import { FaSearch, FaFlask } from 'react-icons/fa';
-
+import React from 'react'
 const researchData = [
   {
     id: 'DT-2025-001',

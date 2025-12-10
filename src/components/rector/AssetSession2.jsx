@@ -10,7 +10,7 @@ import {
   Pie,
   Cell,
 } from 'recharts';
-
+import React from 'react';
 const categoryData = [
   { category: 'Máy tính', fullCategory: 'Máy tính', count: 185, value: 4500000000 },
   { category: 'Nội thất', fullCategory: 'Nội thất', count: 142, value: 3200000000 },

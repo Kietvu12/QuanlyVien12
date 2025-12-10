@@ -1,6 +1,6 @@
 import { FaSearch, FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 import { useAuth } from '../../context/AuthContext';
-
+import React from 'react';
 const activeProjects = [
   {
     id: 'DT-2025-001',

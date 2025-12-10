@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { HiBell, HiLogout, HiMenu } from 'react-icons/hi';
-
+import React from 'react';
 const breadcrumbLabels = {
   dashboard: 'Dashboard',
   revenue: 'Doanh thu',

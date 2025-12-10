@@ -1,6 +1,6 @@
 import { FaFlask, FaBuilding } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
-
+import React from 'react'
 const recentProjects = [
   {
     id: 'DT-2025-001',
